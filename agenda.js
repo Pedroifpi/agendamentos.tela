@@ -1,3 +1,3 @@
-function adicionarHorario(dia){
-    alert('Adicionando o horário para o dia ${dia}');
+function adicionarHorario(dia) {
+    alert(`Adicionar horário para ${dia}`);
 }
