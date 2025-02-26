@@ -47,13 +47,27 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Estiliza os dias */
+/* Layout responsivo */
+.semana {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .dia {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid var(--tom5);
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .dia {
+        width: 48%;
+    }
 }
 
 .dia span {
@@ -69,128 +83,55 @@ h2 {
     color: var(--preto);
 }
 
-/* Estiliza o botão */
+input[type="time"] {
+    border: 1px solid var(--tom4);
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+/* Lista de horários */
+.lista-horarios {
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.horario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--tom6);
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.remover-horario {
+    background: var(--tom1);
+    color: var(--branco);
+    border: none;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remover-horario:hover {
+    background: var(--tom2);
+}
+
+/* Botão de voltar */
 .button {
     background: var(--tom1);
-    border: none;
     padding: 15px 25px;
-    font-size: 15px;
     border-radius: 4px;
-    cursor: pointer;
-    transition: 0.2s;
     position: fixed;
     bottom: 15%;
     left: 20px;
 }
 
-/* Remove a cor azul do link dentro do botão */
 .button a {
-    color: var(--branco); /* Mantém a cor branca */
-    text-decoration: none; /* Remove o sublinhado */
-    display: block; /* Faz o link ocupar todo o botão */
-    text-align: center;
-}
-
-.button:hover {
-    background: var(--tom2);
-}
-
-.button:active {
-    transform: scale(0.95);
-}
-/* Responsividade para telas pequenas (celulares pequenos) */
-@media (max-width: 360px) {
-    .button {
-        bottom: 20%;
-        left: 10px;
-        padding: 15px 20px;
-        font-size: 14px;
-    }
-    
-    .manicure-info .info-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* Responsividade para celulares médios/grandes */
-@media (min-width: 361px) and (max-width: 768px) {
-    .button {
-        bottom: 25%;
-        left: 15px;
-        padding: 18px 25px;
-        font-size: 16px;
-    }
-
-    .manicure-info .info-card {
-        padding: 20px;
-        font-size: 16px;
-    }
-
-    header {
-        padding: 15px;
-    }
-
-    header nav ul {
-        gap: 15px;
-    }
-}
-
-/* Responsividade para tablets */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .button {
-        bottom: 20%;
-        left: 20px;
-        padding: 20px 30px;
-        font-size: 18px;
-    }
-
-    .manicure-info .info-card {
-        max-width: 600px;
-        margin: auto;
-        font-size: 18px;
-    }
-
-    header {
-        padding: 20px;
-    }
-
-    header nav ul {
-        gap: 20px;
-    }
-}
-
-/* Responsividade para notebook e PC (desktop) */
-@media (min-width: 1025px) {
-    .button {
-        bottom: 15%;
-        left: 30px;
-        padding: 20px 40px;
-        font-size: 20px;
-    }
-
-    .manicure-info .info-card {
-        max-width: 800px;
-        margin: auto;
-        font-size: 20px;
-    }
-
-    header {
-        padding: 20px;
-    }
-
-    header nav ul {
-        gap: 25px;
-    }
+    color: var(--branco);
+    text-decoration: none;
 }
